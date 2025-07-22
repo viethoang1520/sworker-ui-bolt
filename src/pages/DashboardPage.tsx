@@ -441,8 +441,8 @@ export const DashboardPage = () => {
                 </div>
                 <div className="flex items-center space-x-2">
                   <span className={`inline-flex px-2 py-1 text-xs font-medium rounded-full ${job.status === 'active' ? 'bg-green-100 text-green-800' :
-                      job.status === 'paused' ? 'bg-yellow-100 text-yellow-800' :
-                        'bg-gray-100 text-gray-800'
+                    job.status === 'paused' ? 'bg-yellow-100 text-yellow-800' :
+                      'bg-gray-100 text-gray-800'
                     }`}>
                     {job.status}
                   </span>
@@ -735,16 +735,16 @@ export const DashboardPage = () => {
 
   return (
     <div className="min-h-screen bg-gray-50 flex">
-      {/* Sidebar */}
-      <div className="w-64 bg-gray-900 flex flex-col">
+      {/* Sidebar - Changed to Light Mode */}
+      <div className="w-64 bg-white border-r border-gray-200 flex flex-col shadow-sm">
         {/* Logo */}
-        <div className="p-6">
+        <div className="p-6 border-b border-gray-100">
           <div className="flex items-center space-x-3">
-            <div className="w-8 h-8 bg-blue-500 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-sm">J</span>
+            <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
+              <span className="text-white font-bold text-sm">S</span>
             </div>
             <div>
-              <h2 className="font-semibold text-lg text-white">JobBoost</h2>
+              <h2 className="font-semibold text-lg text-gray-900">Sworker</h2>
             </div>
           </div>
         </div>
@@ -759,8 +759,8 @@ export const DashboardPage = () => {
                   <button
                     onClick={() => setActiveTab(item.id as TabType)}
                     className={`w-full flex items-center space-x-3 px-3 py-2.5 rounded-lg transition-all duration-200 ${activeTab === item.id
-                      ? 'bg-blue-600 text-white shadow-sm'
-                      : 'text-gray-300 hover:text-white hover:bg-gray-800'
+                        ? 'bg-blue-50 text-blue-700 border border-blue-200 shadow-sm'
+                        : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
                       }`}
                   >
                     <Icon className="w-5 h-5" />
@@ -773,10 +773,10 @@ export const DashboardPage = () => {
         </nav>
 
         {/* Logout */}
-        <div className="p-3">
+        <div className="p-3 border-t border-gray-100">
           <button
             onClick={handleLogout}
-            className="w-full flex items-center space-x-3 px-3 py-2.5 rounded-lg text-gray-300 hover:text-white hover:bg-gray-800 transition-all duration-200"
+            className="w-full flex items-center space-x-3 px-3 py-2.5 rounded-lg text-gray-600 hover:text-red-600 hover:bg-red-50 transition-all duration-200"
           >
             <LogOut className="w-5 h-5" />
             <span className="font-medium text-sm">Logout</span>
@@ -785,7 +785,7 @@ export const DashboardPage = () => {
       </div>
 
       {/* Main Content */}
-      <div className="flex-1 overflow-auto bg-white">
+      <div className="flex-1 overflow-auto bg-gray-50">
         <div className="p-6">
           {renderContent()}
         </div>
